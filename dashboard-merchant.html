@@ -4,49 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="dashboard-body">
+    <div class="dashboard-overlay" id="dashboardOverlay"></div>
     <div class="dashboard-wrapper">
         <!-- Sidebar -->
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-header">
-                 <a href="index.html" class="logo" data-aos="fade-right">
-                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" width="50" height="50">
-                    <span class="logo-text">STACKLY</span>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.svg" alt="Stackly" class="logo-img" width="40" height="40">
+                    <span class="logo-text">STACK<span>LY</span></span>
                 </a>
-                <button class="sidebar-toggle" id="sidebarToggle">
-                    <i class="fas fa-bars"></i>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
 
             <nav class="sidebar-nav">
-                <a href="#" class="nav-item active">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#transactions" class="nav-item" data-section="transactions">
                     <i class="fas fa-credit-card"></i>
                     <span>Transactions</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#analytics" class="nav-item" data-section="analytics">
                     <i class="fas fa-chart-line"></i>
                     <span>Analytics</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#customers" class="nav-item" data-section="customers">
                     <i class="fas fa-users"></i>
                     <span>Customers</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#invoices" class="nav-item" data-section="invoices">
                     <i class="fas fa-file-invoice-dollar"></i>
                     <span>Invoices</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#settings" class="nav-item" data-section="settings">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#support" class="nav-item" data-section="support">
                     <i class="fas fa-life-ring"></i>
                     <span>Support</span>
                 </a>
@@ -62,22 +65,27 @@
             <!-- Top Bar -->
             <header class="dashboard-header">
                 <div class="header-left">
-                    <h1>Merchant Dashboard</h1>
-                    <p>Welcome back,</p>
+                    <div class="header-titles">
+                        <h1>Merchant Dashboard</h1>
+                        <p>Welcome back,</p>
+                    </div>
                 </div>
                 <div class="header-right">
                     <div class="header-notifications">
-                        <button class="notification-btn">
+                        <button class="notification-btn" type="button" aria-label="Notifications">
                             <i class="fas fa-bell"></i>
                             <span class="badge">3</span>
                         </button>
                     </div>
-                    
+                    <button class="dashboard-menu-toggle" id="sidebarToggle" type="button" aria-label="Open menu">
+                        <span></span><span></span><span></span>
+                    </button>
                 </div>
             </header>
 
             <!-- Dashboard Content -->
             <div class="dashboard-content">
+                <div class="dashboard-section active" id="section-dashboard">
                 <!-- Stats Cards -->
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -222,11 +230,79 @@
                         </table>
                     </div>
                 </div>
+                </div>
+
+                <div class="dashboard-section" id="section-transactions">
+                    <div class="section-panel-header"><h2>All Transactions</h2><p>View and manage your payment transactions</p></div>
+                    <div class="table-card">
+                        <div class="card-header"><h3>Transaction History</h3></div>
+                        <div class="table-responsive">
+                            <table class="dashboard-table">
+                                <thead><tr><th>ID</th><th>Customer</th><th>Amount</th><th>Status</th><th>Date</th></tr></thead>
+                                <tbody>
+                                    <tr><td>#TXN-1234</td><td>Alice Johnson</td><td>$250.00</td><td><span class="status-badge success">Success</span></td><td>Mar 11, 2024</td></tr>
+                                    <tr><td>#TXN-1233</td><td>Bob Smith</td><td>$125.50</td><td><span class="status-badge success">Success</span></td><td>Mar 11, 2024</td></tr>
+                                    <tr><td>#TXN-1232</td><td>Carol White</td><td>$89.99</td><td><span class="status-badge pending">Pending</span></td><td>Mar 10, 2024</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" id="section-analytics">
+                    <div class="section-panel-header"><h2>Analytics</h2><p>Revenue trends and payment insights</p></div>
+                    <div class="charts-row">
+                        <div class="chart-card"><div class="card-header"><h3>Revenue Trends</h3></div><div class="chart-container"><canvas id="analyticsRevenueChart"></canvas></div></div>
+                        <div class="chart-card"><div class="card-header"><h3>Conversion Rate</h3></div><div class="performance-metrics">
+                            <div class="metric-item"><div class="metric-label"><span>Checkout Completion</span><span class="metric-value">94.2%</span></div><div class="progress-bar"><div class="progress" style="width:94.2%"></div></div></div>
+                            <div class="metric-item"><div class="metric-label"><span>Repeat Customers</span><span class="metric-value">68%</span></div><div class="progress-bar"><div class="progress" style="width:68%"></div></div></div>
+                        </div></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" id="section-customers">
+                    <div class="section-panel-header"><h2>Customers</h2><p>Manage your customer base</p></div>
+                    <div class="stats-grid">
+                        <div class="stat-card"><div class="stat-icon purple"><i class="fas fa-users"></i></div><div class="stat-details"><h3>856</h3><p>Total Customers</p></div></div>
+                        <div class="stat-card"><div class="stat-icon green"><i class="fas fa-user-plus"></i></div><div class="stat-details"><h3>42</h3><p>New This Month</p></div></div>
+                    </div>
+                    <div class="table-card"><div class="card-header"><h3>Customer List</h3></div>
+                        <div class="table-responsive"><table class="dashboard-table"><thead><tr><th>Name</th><th>Email</th><th>Orders</th><th>Total Spent</th></tr></thead>
+                        <tbody><tr><td>Alice Johnson</td><td>alice@email.com</td><td>12</td><td>$2,450</td></tr><tr><td>Bob Smith</td><td>bob@email.com</td><td>8</td><td>$1,890</td></tr></tbody></table></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" id="section-invoices">
+                    <div class="section-panel-header"><h2>Invoices</h2><p>Create and track invoices</p></div>
+                    <div class="table-card"><div class="card-header"><h3>Recent Invoices</h3><button class="btn btn-primary btn-sm">Create Invoice</button></div>
+                        <div class="table-responsive"><table class="dashboard-table"><thead><tr><th>Invoice #</th><th>Client</th><th>Amount</th><th>Status</th><th>Due Date</th></tr></thead>
+                        <tbody><tr><td>#INV-001</td><td>Tech Corp</td><td>$1,200</td><td><span class="status-badge success">Paid</span></td><td>Mar 15, 2024</td></tr><tr><td>#INV-002</td><td>Design Studio</td><td>$850</td><td><span class="status-badge pending">Pending</span></td><td>Mar 20, 2024</td></tr></tbody></table></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" id="section-settings">
+                    <div class="section-panel-header"><h2>Settings</h2><p>Configure your merchant account</p></div>
+                    <div class="settings-grid">
+                        <div class="chart-card"><h3>Business Profile</h3><form class="settings-form"><div class="form-group"><label>Business Name</label><input type="text" value="My Store" class="form-input"></div><div class="form-group"><label>API Key</label><input type="text" value="sk_live_••••••••" class="form-input" readonly></div><button type="button" class="btn btn-primary">Save Changes</button></form></div>
+                        <div class="chart-card"><h3>Notifications</h3><div class="settings-toggle-list"><label class="checkbox-label"><input type="checkbox" checked> Email alerts for new payments</label><label class="checkbox-label"><input type="checkbox" checked> Weekly summary reports</label><label class="checkbox-label"><input type="checkbox"> SMS notifications</label></div></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" id="section-support">
+                    <div class="section-panel-header"><h2>Support</h2><p>Get help from the Stackly team</p></div>
+                    <div class="support-grid">
+                        <div class="chart-card"><div class="stat-icon blue"><i class="fas fa-headset"></i></div><h3>Live Chat</h3><p style="color:var(--text-muted);margin:12px 0">Available 24/7 for merchant support</p><button class="btn btn-primary">Start Chat</button></div>
+                        <div class="chart-card"><div class="stat-icon green"><i class="fas fa-book"></i></div><h3>Documentation</h3><p style="color:var(--text-muted);margin:12px 0">API guides, tutorials, and FAQs</p><a href="404.html" class="btn btn-secondary">View Docs</a></div>
+                        <div class="chart-card"><div class="stat-icon purple"><i class="fas fa-ticket-alt"></i></div><h3>Open Ticket</h3><p style="color:var(--text-muted);margin:12px 0">Submit a support request</p><button class="btn btn-primary">New Ticket</button></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/dashboard.js"></script>

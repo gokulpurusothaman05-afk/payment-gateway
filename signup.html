@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="auth-page">
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.svg" alt="Stackly" class="logo-img" width="44" height="44">
+                    <span class="logo-text">STACK<span>LY</span></span>
+                </a>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-visual" data-aos="fade-right">
+            <div class="login-particles auth-particles" id="auth-particles"></div>
+            <div class="auth-visual-content">
+                <img src="images/logo.svg" alt="Stackly" width="80" height="80" style="margin:0 auto 24px">
+                <h1>Join Stackly</h1>
+                <p>Start accepting payments in minutes with the most advanced gateway platform</p>
+                <div class="auth-features">
+                    <div class="auth-feature"><i class="fas fa-check-circle"></i> Free 30-day trial</div>
+                    <div class="auth-feature"><i class="fas fa-check-circle"></i> No credit card required</div>
+                    <div class="auth-feature"><i class="fas fa-check-circle"></i> Setup in under 5 minutes</div>
+                    <div class="auth-feature"><i class="fas fa-check-circle"></i> 24/7 onboarding support</div>
+                </div>
+            </div>
+            <div class="auth-3d-card"></div>
+        </div>
+
+        <div class="auth-form-side" data-aos="fade-left">
+            <div class="auth-form-container">
+                <h2>Create Account</h2>
+                <p class="auth-subtitle">Get started with your free Stackly account</p>
+
+                <form class="auth-form" id="signupForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessType">Business Type</label>
+                        <select id="businessType" name="businessType" class="selectpicker form-select" title="Select business type" required>
+                            <option value="ecommerce">E-Commerce</option>
+                            <option value="saas">SaaS / Subscription</option>
+                            <option value="marketplace">Marketplace</option>
+                            <option value="enterprise">Enterprise</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Min. 6 characters" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                        <div class="password-strength"><div class="password-strength-bar"></div></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span>I agree to the <a href="404.html" style="color:var(--primary)">Terms</a> & <a href="404.html" style="color:var(--primary)">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        Create Account <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div class="divider"><span>OR</span></div>
+
+                    <button type="button" class="btn-google" onclick="alert('Google signup coming soon!')">
+                        <i class="fab fa-google"></i> Sign up with Google
+                    </button>
+
+                    <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.20.0/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

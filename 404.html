@@ -3,49 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly</title>
+    <title>404</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="error-page">
-    <div class="error-container">
-        <div class="error-content" data-aos="zoom-in">
-            <div class="error-animation">
-                <svg viewBox="0 0 500 300" class="error-svg">
-                    <text x="50%" y="50%" text-anchor="middle" class="error-number">404</text>
-                    <circle cx="150" cy="150" r="20" fill="#6C63FF" class="floating-circle" style="animation-delay: 0s"/>
-                    <circle cx="350" cy="150" r="15" fill="#FF6B6B" class="floating-circle" style="animation-delay: 0.5s"/>
-                    <circle cx="250" cy="100" r="18" fill="#4CAF50" class="floating-circle" style="animation-delay: 1s"/>
-                    <circle cx="200" cy="200" r="12" fill="#FF9800" class="floating-circle" style="animation-delay: 1.5s"/>
-                </svg>
-            </div>
-
-            <h1 class="error-title" data-aos="fade-up" data-aos-delay="200">Oops! Page Not Found</h1>
-            <p class="error-message" data-aos="fade-up" data-aos-delay="300">
-                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-            </p>
-
-            <div class="error-actions" data-aos="fade-up" data-aos-delay="400">
-                <a href="index.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-home"></i> Go Home
-                </a>
-                
-            </div>
-
-            
-        </div>
-
-      
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
     </div>
-
+    <div class="error-container">
+        <a href="index.html" class="logo" style="justify-content:center;margin-bottom:40px" data-aos="fade-down">
+            <img src="images/logo.svg" alt="Stackly" class="logo-img" width="50" height="50">
+            <span class="logo-text">STACK<span>LY</span></span>
+        </a>
+        <div class="error-content" data-aos="zoom-in">
+            <div class="error-number animate__animated animate__pulse animate__infinite animate__slower">404</div>
+            <h1 class="error-title" data-aos="fade-up" data-aos-delay="200">Page Not Found</h1>
+            <p class="error-message" data-aos="fade-up" data-aos-delay="300">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+            <div class="error-actions" data-aos="fade-up" data-aos-delay="400">
+                <a href="index.html" class="btn btn-primary btn-lg"><i class="fas fa-home"></i> Back to Home</a>
+                <a href="contact.html" class="btn btn-secondary btn-lg"><i class="fas fa-envelope"></i> Contact Support</a>
+            </div>
+        </div>
+        <div id="countdown" class="countdown-timer" style="margin-top:48px" data-aos="fade-up" data-aos-delay="500"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

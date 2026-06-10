@@ -4,37 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-     <!-- Navigation -->
+
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo" data-aos="fade-right">
-                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" width="50" height="50">
-                    <span class="logo-text">STACKLY</span>
-                </a>
-                
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                
+                <a href="index.html" class="logo"><img src="images/logo.svg" alt="Stackly" class="logo-img" width="44" height="44"><span class="logo-text">STACK<span>LY</span></span></a>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
                 <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="home2.html">Home 2</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item dropdown"><a href="#" class="nav-link">Home <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="index.html">Home Classic</a></li><li><a href="home2.html">Home Modern</a></li></ul></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item active"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-actions"><a href="login.html" class="btn btn-ghost btn-sm">Login</a><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -42,153 +31,130 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1 data-aos="fade-up">Blog & Insights</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Latest news and updates from Stackly</p>
+            <h1 data-aos="fade-up">Blog & <span class="text-gradient">Insights</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100">Expert perspectives on payments, security, and fintech innovation</p>
+            <div class="breadcrumb" data-aos="fade-up" data-aos-delay="200"><a href="index.html">Home</a> / <span>Blog</span></div>
         </div>
     </section>
 
     <section class="blog-content">
         <div class="container">
-            <div class="blog-grid">
-                <article class="blog-card" data-aos="fade-up">
-                    <div class="blog-image">
-                        <img src="images/img8.webp" alt="Blog Post">
-                        <span class="blog-category">Technology</span>
-                    </div>
-                    <div class="blog-content-area">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> March 10, 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h3>The Future of Digital Payments in 2024</h3>
-                        <p>Explore the latest trends shaping the payment industry and how businesses can stay ahead of the curve...</p>
-                        <a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="blog-filter" data-aos="fade-up">
+                <div class="filter-buttons">
+                    <button class="active" data-filter="*">All Posts</button>
+                    <button data-filter=".fintech">Fintech</button>
+                    <button data-filter=".security">Security</button>
+                    <button data-filter=".growth">Growth</button>
+                </div>
+            </div>
+            <div class="isotope-grid blog-grid" style="display:block">
+                <article class="blog-card grid-item fintech" data-aos="fade-up">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80" alt=""><span class="blog-category">Fintech</span></div>
+                    <div class="blog-content-area"><div class="blog-meta"><span><i class="fas fa-calendar"></i> Jun 1, 2026</span><span><i class="fas fa-user"></i> Stackly Team</span></div><h3>The Future of Digital Payments in 2026</h3><p>Explore emerging trends shaping the payment industry and how businesses can stay ahead...</p><a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div>
                 </article>
-
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="blog-image">
-                        <img src="images/img9.webp" alt="Blog Post">
-                        <span class="blog-category">Security</span>
-                    </div>
-                    <div class="blog-content-area">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> March 8, 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h3>Understanding PCI DSS Compliance</h3>
-                        <p>A comprehensive guide to maintaining PCI DSS compliance and protecting customer payment data...</p>
-                        <a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <article class="blog-card grid-item security" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80" alt=""><span class="blog-category">Security</span></div>
+                    <div class="blog-content-area"><div class="blog-meta"><span><i class="fas fa-calendar"></i> May 28, 2026</span><span><i class="fas fa-user"></i> Security Team</span></div><h3>Understanding PCI DSS Compliance</h3><p>A comprehensive guide to maintaining PCI DSS compliance and protecting customer data...</p><a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div>
                 </article>
-
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="blog-image">
-                        <img src="images/img10.webp" alt="Blog Post">
-                        <span class="blog-category">Business</span>
-                    </div>
-                    <div class="blog-content-area">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> March 5, 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h3>Optimizing Checkout Conversion Rates</h3>
-                        <p>Learn proven strategies to reduce cart abandonment and increase your online sales...</p>
-                        <a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <article class="blog-card grid-item growth" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt=""><span class="blog-category">Growth</span></div>
+                    <div class="blog-content-area"><div class="blog-meta"><span><i class="fas fa-calendar"></i> May 20, 2026</span><span><i class="fas fa-user"></i> Growth Team</span></div><h3>Scaling Payments for Startups</h3><p>How to grow from 100 to 1 million transactions without breaking your infrastructure...</p><a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div>
                 </article>
-
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="blog-image">
-                        <img src="images/img11.webp" alt="Blog Post">
-                        <span class="blog-category">Integration</span>
-                    </div>
-                    <div class="blog-content-area">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> March 3, 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h3>Quick Start Guide to Payment Integration</h3>
-                        <p>Step-by-step instructions for integrating Stackly's payment gateway into your application...</p>
-                        <a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <article class="blog-card grid-item fintech" data-aos="fade-up">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&q=80" alt=""><span class="blog-category">Fintech</span></div>
+                    <div class="blog-content-area"><div class="blog-meta"><span><i class="fas fa-calendar"></i> May 15, 2026</span><span><i class="fas fa-user"></i> Stackly Team</span></div><h3>Crypto Payments: A Merchant's Guide</h3><p>Everything you need to know about accepting cryptocurrency payments safely...</p><a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div>
                 </article>
-
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="blog-image">
-                        <img src="images/img12.webp" alt="Blog Post">
-                        <span class="blog-category">Analysis</span>
-                    </div>
-                    <div class="blog-content-area">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> March 1, 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h3>Mobile Payment Trends 2024</h3>
-                        <p>Analyzing the rapid growth of mobile payments and what it means for your business...</p>
-                        <a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <article class="blog-card grid-item security" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" alt=""><span class="blog-category">Security</span></div>
+                    <div class="blog-content-area"><div class="blog-meta"><span><i class="fas fa-calendar"></i> May 10, 2026</span><span><i class="fas fa-user"></i> Security Team</span></div><h3>3D Secure 2.0: What Merchants Need to Know</h3><p>How 3DS2 reduces fraud while improving checkout conversion rates...</p><a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div>
                 </article>
-
-                <article class="blog-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="blog-image">
-                        <img src="images/img13.webp" alt="Blog Post">
-                        <span class="blog-category">Tips</span>
-                    </div>
-                    <div class="blog-content-area">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar"></i> Feb 28, 2024</span>
-                            <span><i class="fas fa-user"></i> Admin</span>
-                        </div>
-                        <h3>Fraud Prevention Best Practices</h3>
-                        <p>Essential tips for protecting your business from payment fraud and chargebacks...</p>
-                        <a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <article class="blog-card grid-item growth" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt=""><span class="blog-category">Growth</span></div>
+                    <div class="blog-content-area"><div class="blog-meta"><span><i class="fas fa-calendar"></i> May 5, 2026</span><span><i class="fas fa-user"></i> Growth Team</span></div><h3>Optimizing Checkout for Mobile Commerce</h3><p>Best practices to reduce cart abandonment and boost mobile conversion...</p><a href="404.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div>
                 </article>
             </div>
         </div>
     </section>
 
+    <section class="blog-sidebar-section">
+        <div class="container">
+            <div class="sidebar-grid">
+                <div>
+                    <div class="section-header left" data-aos="fade-up"><h2>Featured <span class="text-gradient">Articles</span></h2></div>
+                    <div class="features-grid" style="grid-template-columns:1fr 1fr">
+                        <div class="feature-card" data-aos="fade-up"><div class="feature-icon"><i class="fas fa-fire"></i></div><h3>Trending Now</h3><p>AI-powered fraud detection is reshaping how merchants protect revenue.</p><a href="404.html" class="read-more">Read Article</a></div>
+                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100"><div class="feature-icon"><i class="fas fa-podcast"></i></div><h3>Stackly Podcast</h3><p>Listen to industry leaders discuss the future of fintech.</p><a href="404.html" class="read-more">Listen Now</a></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="sidebar-widget" data-aos="fade-left"><h4>Popular Posts</h4>
+                        <div class="popular-post"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=120&q=80" alt=""><div><h5>Future of Digital Payments</h5><span>Jun 1, 2026</span></div></div>
+                        <div class="popular-post"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=120&q=80" alt=""><div><h5>PCI DSS Compliance Guide</h5><span>May 28, 2026</span></div></div>
+                        <div class="popular-post"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=120&q=80" alt=""><div><h5>Scaling for Startups</h5><span>May 20, 2026</span></div></div>
+                    </div>
+                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100"><h4>Newsletter</h4><p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px">Get weekly payment insights</p><form class="newsletter-form"><input type="email" placeholder="Your email" required><button type="submit" class="btn btn-primary btn-block btn-sm">Subscribe</button></form></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta"><div class="cta-bg"></div><div class="container"><div class="cta-content" data-aos="zoom-in"><h2>Ready to Modernize Your Payments?</h2><p>Join thousands of businesses on Stackly</p><a href="signup.html" class="btn btn-primary btn-lg">Start Free Trial</a></div></div></section>
+
+   
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col">
-                    <h3>Stackly</h3>
-                    <p>Trusted payment solutions worldwide.</p>
+                <div class="footer-col" data-aos="fade-up">
+                    <a href="index.html" class="logo" style="margin-bottom:16px">
+                        <img src="images/logo.svg" alt="Stackly" class="logo-img" width="40" height="40">
+                        <span class="logo-text">STACK<span>LY</span></span>
+                    </a>
+                    <p>The world's most advanced payment gateway — secure, fast, and built for scale.</p>
                     <div class="social-links">
-                        <a href="404.html"><i class="fab fa-facebook"></i></a>
+                        <a href="404.html"><i class="fab fa-facebook-f"></i></a>
                         <a href="404.html"><i class="fab fa-twitter"></i></a>
-                        <a href="404.html"><i class="fab fa-linkedin"></i></a>
+                        <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
                         <a href="404.html"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="404.html">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="404.html">Careers</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Account</h4>
                     <ul>
-                        <li><a href="404.html">Help</a></li>
-                        <li><a href="404.html">Privacy</a></li>
-                        <li><a href="404.html">Terms</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="404.html">Privacy Policy</a></li>
+                        <li><a href="404.html">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Stackly. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Stackly. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

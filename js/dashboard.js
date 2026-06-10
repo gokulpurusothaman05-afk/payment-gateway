@@ -5,21 +5,57 @@
 (function($) {
     'use strict';
 
+    const chartInstances = [];
+
     $(document).ready(function() {
         initDashboardCharts();
         initDashboardCounters();
         initSidebarToggle();
+        initSidebarNavigation();
+        $(window).on('resize', resizeDashboardCharts);
+        $(window).on('load', function() {
+            setTimeout(resizeDashboardCharts, 200);
+        });
     });
+
+    function resizeDashboardCharts() {
+        chartInstances.forEach(function(chart) {
+            if (chart) chart.resize();
+        });
+    }
+
+    function setSidebarOpen(open) {
+        $('#sidebar').toggleClass('active', open);
+        $('#dashboardOverlay').toggleClass('active', open);
+        $('#sidebarToggle').toggleClass('active', open);
+        $('body').toggleClass('sidebar-open', open);
+        if (open) {
+            setTimeout(resizeDashboardCharts, 350);
+        }
+    }
+
+    const chartScaleDefaults = {
+        y: {
+            beginAtZero: true,
+            ticks: { color: '#94A3B8', font: { size: 11 } },
+            grid: { color: 'rgba(148, 163, 184, 0.15)' }
+        },
+        x: {
+            ticks: { color: '#94A3B8', font: { size: 11 } },
+            grid: { display: false }
+        }
+    };
 
     // ==========================================
     // DASHBOARD CHARTS
     // ==========================================
     function initDashboardCharts() {
+        if (typeof Chart === 'undefined') return;
         // Revenue Chart
         const revenueChartEl = document.getElementById('revenueChart');
         if (revenueChartEl) {
             const revenueCtx = revenueChartEl.getContext('2d');
-            new Chart(revenueCtx, {
+            chartInstances.push(new Chart(revenueCtx, {
                 type: 'line',
                 data: {
                     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
@@ -60,31 +96,26 @@
                     },
                     scales: {
                         y: {
-                            beginAtZero: true,
+                            ...chartScaleDefaults.y,
                             ticks: {
+                                color: '#94A3B8',
+                                font: { size: 11 },
                                 callback: function(value) {
                                     return '$' + value.toLocaleString();
                                 }
-                            },
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
                             }
                         },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
+                        x: chartScaleDefaults.x
                     }
                 }
-            });
+            }));
         }
 
         // Payment Methods Chart
         const paymentMethodsChartEl = document.getElementById('paymentMethodsChart');
         if (paymentMethodsChartEl) {
             const paymentCtx = paymentMethodsChartEl.getContext('2d');
-            new Chart(paymentCtx, {
+            chartInstances.push(new Chart(paymentCtx, {
                 type: 'doughnut',
                 data: {
                     labels: ['Credit Card', 'PayPal', 'UPI', 'Net Banking'],
@@ -107,7 +138,10 @@
                         legend: {
                             position: 'bottom',
                             labels: {
-                                padding: 15,
+                                padding: 10,
+                                boxWidth: 10,
+                                color: '#94A3B8',
+                                font: { size: 11 },
                                 usePointStyle: true
                             }
                         },
@@ -122,14 +156,14 @@
                         }
                     }
                 }
-            });
+            }));
         }
 
         // Volume Chart (Admin Dashboard)
         const volumeChartEl = document.getElementById('volumeChart');
         if (volumeChartEl) {
             const volumeCtx = volumeChartEl.getContext('2d');
-            new Chart(volumeCtx, {
+            chartInstances.push(new Chart(volumeCtx, {
                 type: 'bar',
                 data: {
                     labels: ['12 AM', '3 AM', '6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM'],
@@ -155,20 +189,11 @@
                         }
                     },
                     scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                color: 'rgba(0, 0, 0, 0.05)'
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
+                        y: chartScaleDefaults.y,
+                        x: chartScaleDefaults.x
                     }
                 }
-            });
+            }));
         }
     }
 
@@ -201,18 +226,52 @@
     // SIDEBAR TOGGLE
     // ==========================================
     function initSidebarToggle() {
-        $('#sidebarToggle').on('click', function() {
-            $('.dashboard-sidebar').toggleClass('active');
-            $('.dashboard-main').toggleClass('expanded');
+        $(document).on('click', '#sidebarToggle', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = $('#sidebar').hasClass('active');
+            setSidebarOpen(!isOpen);
         });
 
-        // Close sidebar on mobile when clicking outside
+        $(document).on('click', '#sidebarClose, #dashboardOverlay', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            setSidebarOpen(false);
+        });
+
         $(document).on('click', function(e) {
-            if ($(window).width() <= 768) {
-                if (!$(e.target).closest('.dashboard-sidebar, #sidebarToggle').length) {
-                    $('.dashboard-sidebar').removeClass('active');
-                }
+            if ($(window).width() > 768 || !$('#sidebar').hasClass('active')) return;
+            if ($(e.target).closest('#sidebar, #sidebarToggle, .dashboard-menu-toggle').length) return;
+            setSidebarOpen(false);
+        });
+    }
+
+    function initSidebarNavigation() {
+        $('.sidebar-nav .nav-item[data-section]').on('click', function(e) {
+            e.preventDefault();
+            const section = $(this).data('section');
+            const $target = $('#section-' + section);
+
+            if (!$target.length) return;
+
+            $('.sidebar-nav .nav-item').removeClass('active');
+            $(this).addClass('active');
+            $('.dashboard-section').removeClass('active');
+            $target.addClass('active');
+
+            const title = $(this).find('span').text().trim();
+            const $header = $('.dashboard-header h1');
+            if ($header.length && title) {
+                $header.text(title);
             }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if ($(window).width() <= 768) {
+                setSidebarOpen(false);
+            }
+
+            setTimeout(resizeDashboardCharts, 100);
         });
     }
 

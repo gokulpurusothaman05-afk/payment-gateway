@@ -4,53 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="dashboard-body">
+    <div class="dashboard-overlay" id="dashboardOverlay"></div>
     <div class="dashboard-wrapper">
         <!-- Sidebar -->
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="sidebar-header">
-                 <a href="index.html" class="logo" data-aos="fade-right">
-                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" width="50" height="50">
-                    <span class="logo-text">STACKLY</span>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.svg" alt="Stackly" class="logo-img" width="40" height="40">
+                    <span class="logo-text">STACK<span>LY</span></span>
                 </a>
-                <button class="sidebar-toggle" id="sidebarToggle">
-                    <i class="fas fa-bars"></i>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
 
             <nav class="sidebar-nav">
-                <a href="#" class="nav-item active">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#merchants" class="nav-item" data-section="merchants">
                     <i class="fas fa-store"></i>
                     <span>Merchants</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#transactions" class="nav-item" data-section="transactions">
                     <i class="fas fa-exchange-alt"></i>
                     <span>All Transactions</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#fraud" class="nav-item" data-section="fraud">
                     <i class="fas fa-shield-alt"></i>
                     <span>Fraud Detection</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#reports" class="nav-item" data-section="reports">
                     <i class="fas fa-chart-bar"></i>
                     <span>Reports</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#users" class="nav-item" data-section="users">
                     <i class="fas fa-users-cog"></i>
                     <span>User Management</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#settings" class="nav-item" data-section="settings">
                     <i class="fas fa-sliders-h"></i>
                     <span>System Settings</span>
                 </a>
-                <a href="404.html" class="nav-item">
+                <a href="#alerts" class="nav-item" data-section="alerts">
                     <i class="fas fa-bell"></i>
                     <span>Alerts</span>
                 </a>
@@ -66,8 +69,10 @@
             <!-- Top Bar -->
             <header class="dashboard-header">
                 <div class="header-left">
-                    <h1>Admin Dashboard</h1>
-                    <p>System Overview & Management</p>
+                    <div class="header-titles">
+                        <h1>Admin Dashboard</h1>
+                        <p>System Overview & Management</p>
+                    </div>
                 </div>
                 <div class="header-right">
                     <div class="header-search">
@@ -75,20 +80,23 @@
                         <input type="text" placeholder="Search...">
                     </div>
                     <div class="header-notifications">
-                        <button class="notification-btn">
+                        <button class="notification-btn" type="button" aria-label="Notifications">
                             <i class="fas fa-bell"></i>
                             <span class="badge">8</span>
                         </button>
                     </div>
                     <div class="header-profile">
-                        
                         <span>Admin</span>
                     </div>
+                    <button class="dashboard-menu-toggle" id="sidebarToggle" type="button" aria-label="Open menu">
+                        <span></span><span></span><span></span>
+                    </button>
                 </div>
             </header>
 
             <!-- Dashboard Content -->
             <div class="dashboard-content">
+                <div class="dashboard-section active" id="section-dashboard">
                 <!-- Stats Cards -->
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -351,11 +359,52 @@
                         </table>
                     </div>
                 </div>
+                </div>
+
+                <div class="dashboard-section" id="section-merchants">
+                    <div class="section-panel-header"><h2>Merchants</h2><p>Manage registered merchant accounts</p></div>
+                    <div class="table-card"><div class="card-header"><h3>All Merchants</h3></div>
+                        <div class="table-responsive"><table class="dashboard-table"><thead><tr><th>Merchant</th><th>ID</th><th>Status</th><th>Volume</th></tr></thead>
+                        <tbody><tr><td><div class="merchant-info"><img src="https://i.pravatar.cc/40?img=1" alt=""><span>TechStore Inc.</span></div></td><td>#MCH-1245</td><td><span class="status-badge success">Active</span></td><td>$456,789</td></tr><tr><td><div class="merchant-info"><img src="https://i.pravatar.cc/40?img=2" alt=""><span>Fashion Hub</span></div></td><td>#MCH-1156</td><td><span class="status-badge success">Active</span></td><td>$342,567</td></tr></tbody></table></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" id="section-transactions">
+                    <div class="section-panel-header"><h2>All Transactions</h2><p>Platform-wide transaction monitoring</p></div>
+                    <div class="stats-grid"><div class="stat-card"><div class="stat-icon purple"><i class="fas fa-exchange-alt"></i></div><div class="stat-details"><h3>45,678</h3><p>Today</p></div></div><div class="stat-card"><div class="stat-icon blue"><i class="fas fa-dollar-sign"></i></div><div class="stat-details"><h3>$2.4M</h3><p>Volume Today</p></div></div></div>
+                </div>
+
+                <div class="dashboard-section" id="section-fraud">
+                    <div class="section-panel-header"><h2>Fraud Detection</h2><p>AI-powered threat monitoring</p></div>
+                    <div class="alerts-list"><div class="alert-item critical"><i class="fas fa-exclamation-circle"></i><div><h4>High Risk</h4><p>3 suspicious transactions flagged in last hour</p></div></div><div class="alert-item warning"><i class="fas fa-exclamation-triangle"></i><div><h4>Review Required</h4><p>12 transactions pending manual review</p></div></div></div>
+                </div>
+
+                <div class="dashboard-section" id="section-reports">
+                    <div class="section-panel-header"><h2>Reports</h2><p>Generate and download platform reports</p></div>
+                    <div class="support-grid"><div class="chart-card"><h3>Monthly Summary</h3><p style="color:var(--text-muted);margin:12px 0">Revenue, volume, and merchant growth</p><button class="btn btn-primary">Download PDF</button></div><div class="chart-card"><h3>Compliance Report</h3><p style="color:var(--text-muted);margin:12px 0">PCI DSS and audit documentation</p><button class="btn btn-primary">Generate</button></div></div>
+                </div>
+
+                <div class="dashboard-section" id="section-users">
+                    <div class="section-panel-header"><h2>User Management</h2><p>Admin and staff account control</p></div>
+                    <div class="table-card"><div class="card-header"><h3>System Users</h3></div><div class="table-responsive"><table class="dashboard-table"><thead><tr><th>Name</th><th>Role</th><th>Status</th><th>Last Login</th></tr></thead><tbody><tr><td>Admin User</td><td>Super Admin</td><td><span class="status-badge success">Active</span></td><td>Today</td></tr><tr><td>Support Agent</td><td>Support</td><td><span class="status-badge success">Active</span></td><td>Yesterday</td></tr></tbody></table></div></div>
+                </div>
+
+                <div class="dashboard-section" id="section-settings">
+                    <div class="section-panel-header"><h2>System Settings</h2><p>Configure platform-wide options</p></div>
+                    <div class="settings-grid"><div class="chart-card"><h3>Platform Config</h3><form class="settings-form"><div class="form-group"><label>Default Currency</label><select class="form-input"><option>USD</option><option>EUR</option><option>GBP</option></select></div><div class="form-group"><label>Transaction Fee (%)</label><input type="text" value="2.9" class="form-input"></div><button type="button" class="btn btn-primary">Save</button></form></div></div>
+                </div>
+
+                <div class="dashboard-section" id="section-alerts">
+                    <div class="section-panel-header"><h2>Alerts</h2><p>System notifications and warnings</p></div>
+                    <div class="alerts-list"><div class="alert-item critical"><i class="fas fa-exclamation-circle"></i><div><h4>Critical</h4><p>3 merchants exceeded transaction limits</p></div></div><div class="alert-item warning"><i class="fas fa-exclamation-triangle"></i><div><h4>Warning</h4><p>Database storage at 78% capacity</p></div></div><div class="alert-item info"><i class="fas fa-info-circle"></i><div><h4>Info</h4><p>Scheduled maintenance tomorrow 2AM-4AM</p></div></div></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/dashboard.js"></script>

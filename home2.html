@@ -4,190 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stackly</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation with Login -->
+
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo" data-aos="fade-right">
-                    <img src="images/logo.webp" alt="Stackly Logo" class="logo-img" width="50" height="50">
-                    <span class="logo-text">STACKLY</span>
-                </a>
-
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
+                <a href="index.html" class="logo"><img src="images/logo.svg" alt="Stackly" class="logo-img" width="44" height="44"><span class="logo-text">STACK<span>LY</span></span></a>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
                 <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html">Home1</a></li>
-                        </ul>
-                    </li>
-                    
+                    <li class="nav-item dropdown active"><a href="index.html" class="nav-link">Home </a></li>
                     <li class="nav-item"><a href="#features-section" class="nav-link">Features</a></li>
-                    <li class="nav-item"><a href="#payment-options" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="#pricing-section" class="nav-link">Pricing</a></li>
                     <li class="nav-item"><a href="#dashboard-preview" class="nav-link">Dashboard</a></li>
-
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-
-                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-actions"><a href="login.html" class="btn btn-ghost btn-sm">Login</a><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   
+    <!-- Hero -->
+    <section class="hero" id="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-bg"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge animate__animated animate__fadeInDown"><span class="pulse-dot"></span> Modern Payment Infrastructure</div>
+                    <h1 class="hero-title"><span class="text-gradient">Payments</span> Reimagined for the Digital Age</h1>
+                    <p class="hero-subtitle">One platform to accept, manage, and optimize every transaction — from startup to enterprise scale.</p>
+                    <div class="hero-buttons"><a href="signup.html" class="btn btn-primary btn-lg">Get Started Free</a><a href="#about-section" class="btn btn-secondary btn-lg">Learn More</a></div>
+                </div>
+                <div class="hero-3d-scene" data-aos="fade-left">
+                    <div class="card-3d-wrapper"><div class="card-3d"><div class="card-chip"></div><div class="card-number">•••• •••• •••• 9012</div><div class="card-info"><div><small>HOLDER</small><br>STACKLY</div><div><small>EXP</small><br>09/29</div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section class="about-section" id="about-section">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="images/IMG1.webp" alt="About Stackly" >
-                    <div class="about-badge">
-                        <span class="badge-number counter" data-target="10">0</span>
-                        <span class="badge-text">Years Experience</span>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" alt="About Stackly">
+                    <div class="about-badge"><span class="badge-number counter" data-target="12">0</span><span class="badge-text">Years Experience</span></div>
                 </div>
                 <div class="about-content" data-aos="fade-left">
-                    <span class="section-label">About Us</span>
-                    <h2 class="section-title">Leading Payment Solutions Provider</h2>
-                    <p>Stackly has been at the forefront of payment technology for over a decade, serving thousands of businesses worldwide with secure, reliable, and innovative payment processing solutions.</p>
-                    <p>Our mission is to make payments simple, secure, and accessible for everyone.</p>
+                    <span class="section-tag"><i class="fas fa-building"></i> About</span>
+                    <h2 style="font-size:2.25rem;margin-bottom:16px">Leading <span class="text-gradient">Payment Solutions</span> Provider</h2>
+                    <p style="color:var(--text-muted);margin-bottom:12px">Stackly has pioneered payment technology for over a decade, serving 50,000+ businesses with secure, reliable infrastructure.</p>
+                    <p style="color:var(--text-muted);margin-bottom:24px">Our mission: make payments invisible, instant, and accessible for everyone.</p>
                     <div class="about-features">
-                        <div class="about-feature-item">
-                            <i class="fas fa-award"></i>
-                            <div>
-                                <h4>Award Winning</h4>
-                                <p>Recognized globally</p>
-                            </div>
-                        </div>
-                        <div class="about-feature-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Expert Team</h4>
-                                <p>200+ professionals</p>
-                            </div>
-                        </div>
+                        <div class="about-feature-item"><i class="fas fa-award"></i><div><h4>Award Winning</h4><p style="color:var(--text-muted);font-size:0.9rem">Recognized globally for innovation</p></div></div>
+                        <div class="about-feature-item"><i class="fas fa-users"></i><div><h4>500+ Experts</h4><p style="color:var(--text-muted);font-size:0.9rem">Engineers, security & support</p></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section" id="features-section">
+    <!-- Features -->
+    <section class="features-section" id="features-section" style="background:var(--bg-primary)">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">Features</span>
-                <h2 class="section-title">Powerful Payment Features</h2>
-                <p class="section-description">Everything you need to process payments efficiently</p>
-            </div>
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-star"></i> Features</span><h2>Powerful <span class="text-gradient">Payment Features</span></h2><p>Everything you need to process payments efficiently</p></div>
             <div class="features-grid-layout">
-                <div class="feature-box" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="feature-icon-wrapper">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="28" fill="#E8F5E9"/>
-                            <path d="M20 30 L27 37 L40 23" stroke="#4CAF50" stroke-width="3" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3>Fast Transactions</h3>
-                    <p>Process payments in milliseconds with our optimized infrastructure</p>
-                </div>
-                <div class="feature-box" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="feature-icon-wrapper">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <rect x="10" y="10" width="40" height="40" rx="5" fill="#E3F2FD"/>
-                            <circle cx="30" cy="30" r="8" fill="#2196F3"/>
-                        </svg>
-                    </div>
-                    <h3>Secure Payments</h3>
-                    <p>Bank-level security with end-to-end encryption</p>
-                </div>
-                <div class="feature-box" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="feature-icon-wrapper">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="28" fill="#FFF3E0"/>
-                            <rect x="20" y="15" width="20" height="30" rx="3" fill="none" stroke="#FF9800" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Mobile Ready</h3>
-                    <p>Optimized for all devices and platforms</p>
-                </div>
-                <div class="feature-box" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="feature-icon-wrapper">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="28" fill="#F3E5F5"/>
-                            <path d="M15 30 L25 40 L45 20" stroke="#9C27B0" stroke-width="3" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3>Easy Integration</h3>
-                    <p>Simple APIs and comprehensive documentation</p>
-                </div>
-                <div class="feature-box" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="feature-icon-wrapper">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="28" fill="#FFEBEE"/>
-                            <path d="M30 15 L30 30 L42 30" stroke="#F44336" stroke-width="3" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3>Real-time Analytics</h3>
-                    <p>Comprehensive insights into your transactions</p>
-                </div>
-                <div class="feature-box" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="feature-icon-wrapper">
-                        <svg width="60" height="60" viewBox="0 0 60 60">
-                            <circle cx="30" cy="30" r="28" fill="#E0F2F1"/>
-                            <circle cx="30" cy="30" r="15" fill="none" stroke="#009688" stroke-width="3"/>
-                        </svg>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Always here to help you succeed</p>
-                </div>
+                <div class="feature-box" data-aos="zoom-in"><div class="feature-icon"><i class="fas fa-bolt" style="font-size:2rem;color:var(--primary)"></i></div><h3>Fast Transactions</h3><p>Sub-100ms processing with optimized global infrastructure</p></div>
+                <div class="feature-box" data-aos="zoom-in" data-aos-delay="100"><div class="feature-icon"><i class="fas fa-shield-halved" style="font-size:2rem;color:var(--primary)"></i></div><h3>Secure Payments</h3><p>Bank-level encryption with AI fraud detection</p></div>
+                <div class="feature-box" data-aos="zoom-in" data-aos-delay="200"><div class="feature-icon"><i class="fas fa-mobile-screen" style="font-size:2rem;color:var(--primary)"></i></div><h3>Mobile Ready</h3><p>Optimized checkout for every device and platform</p></div>
+                <div class="feature-box" data-aos="zoom-in" data-aos-delay="300"><div class="feature-icon"><i class="fas fa-plug" style="font-size:2rem;color:var(--primary)"></i></div><h3>Easy Integration</h3><p>REST APIs, SDKs, and no-code plugins</p></div>
+                <div class="feature-box" data-aos="zoom-in" data-aos-delay="400"><div class="feature-icon"><i class="fas fa-chart-pie" style="font-size:2rem;color:var(--primary)"></i></div><h3>Real-time Analytics</h3><p>Live dashboards with actionable insights</p></div>
+                <div class="feature-box" data-aos="zoom-in" data-aos-delay="500"><div class="feature-icon"><i class="fas fa-headset" style="font-size:2rem;color:var(--primary)"></i></div><h3>24/7 Support</h3><p>Dedicated experts always ready to help</p></div>
             </div>
         </div>
     </section>
-     <!-- Payment Options -->
+
+    <!-- Payment Options -->
     <section class="payment-options" id="payment-options">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">Payment Methods</span>
-                <h2 class="section-title">Accept All Payment Types</h2>
-            </div>
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-credit-card"></i> Methods</span><h2>Accept All <span class="text-gradient">Payment Types</span></h2></div>
             <div class="payment-grid">
-                <div class="payment-option" data-aos="fade-up" data-aos-delay="100">
-                    <svg width="80" height="60" viewBox="0 0 80 60">
-                        <rect width="80" height="60" rx="8" fill="#1A1F71"/>
-                        <text x="40" y="35" font-size="18" fill="white" text-anchor="middle" font-weight="bold">VISA</text>
-                    </svg>
-                </div>
-                <div class="payment-option" data-aos="fade-up" data-aos-delay="200">
-                    <svg width="80" height="60" viewBox="0 0 80 60">
-                        <rect width="80" height="60" rx="8" fill="#EB001B"/>
-                        <circle cx="30" cy="30" r="15" fill="#FF5F00" opacity="0.9"/>
-                        <circle cx="50" cy="30" r="15" fill="#F79E1B" opacity="0.9"/>
-                    </svg>
-                </div>
-                <div class="payment-option" data-aos="fade-up" data-aos-delay="300">
-                    <svg width="80" height="60" viewBox="0 0 80 60">
-                        <rect width="80" height="60" rx="8" fill="#016FD0"/>
-                        <text x="40" y="35" font-size="16" fill="white" text-anchor="middle" font-weight="bold">AMEX</text>
-                    </svg>
-                </div>
-                <div class="payment-option" data-aos="fade-up" data-aos-delay="400">
-                    <svg width="80" height="60" viewBox="0 0 80 60">
-                        <rect width="80" height="60" rx="8" fill="#0070BA"/>
-                        <text x="40" y="35" font-size="14" fill="white" text-anchor="middle" font-weight="bold">PayPal</text>
-                    </svg>
-                </div>
+                <div class="payment-option" data-aos="fade-up"><i class="fab fa-cc-visa" style="font-size:3rem;color:#1A1F71"></i></div>
+                <div class="payment-option" data-aos="fade-up" data-aos-delay="100"><i class="fab fa-cc-mastercard" style="font-size:3rem;color:#EB001B"></i></div>
+                <div class="payment-option" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-cc-amex" style="font-size:3rem;color:#006FCF"></i></div>
+                <div class="payment-option" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-cc-paypal" style="font-size:3rem;color:#0070BA"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration -->
+    <section class="integration-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-puzzle-piece"></i> Integrations</span><h2>Connect with <span class="text-gradient">Your Stack</span></h2></div>
+            <div class="integration-logos" data-aos="fade-up">
+                <div class="integration-logo"><i class="fab fa-shopify"></i></div>
+                <div class="integration-logo"><i class="fab fa-wordpress"></i></div>
+                <div class="integration-logo"><i class="fab fa-react"></i></div>
+                <div class="integration-logo"><i class="fab fa-node-js"></i></div>
+                <div class="integration-logo"><i class="fab fa-aws"></i></div>
+                <div class="integration-logo"><i class="fab fa-stripe"></i></div>
             </div>
         </div>
     </section>
@@ -195,318 +120,153 @@
     <!-- Dashboard Preview -->
     <section class="dashboard-preview" id="dashboard-preview">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">Dashboard</span>
-                <h2 class="section-title">Powerful Analytics Dashboard</h2>
-                <p class="section-description">Track every transaction with real-time insights</p>
-            </div>
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-chart-line"></i> Dashboard</span><h2>Powerful <span class="text-gradient">Analytics Dashboard</span></h2><p>Track every transaction with real-time insights</p></div>
             <div class="dashboard-mockup" data-aos="zoom-in">
-                <img src="images/IMG2.webp" alt="Dashboard Preview">
-                <div class="dashboard-overlay">
-                    <div class="chart-element chart-1"></div>
-                    <div class="chart-element chart-2"></div>
-                </div>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Dashboard Preview">
             </div>
         </div>
     </section>
 
     <!-- Customer Stories -->
-    <section class="customer-stories" id="customer-stories">
+    <section class="customer-stories" id="customer-stories" style="background:var(--bg-primary)">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">Success Stories</span>
-                <h2 class="section-title">Trusted by Industry Leaders</h2>
-            </div>
-            <div class="stories-slider">
-                <div class="story-card" data-aos="fade-up">
-                    <div class="story-quote">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"Stackly helped us increase our conversion rate by 35% in just 3 months. The integration was seamless!"</p>
-                    </div>
-                    <div class="story-author">
-                        <img src="images/img3.webp" alt="Customer">
-                        <div>
-                            <h4>Alex Rivera</h4>
-                            <p>CEO, TechStart Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="story-card" data-aos="fade-up">
-                    <div class="story-quote">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"The best payment gateway we've used. Superior security and excellent customer support."</p>
-                    </div>
-                    <div class="story-author">
-                        <img src="images/img4.webp" alt="Customer">
-                        <div>
-                            <h4>Maria Garcia</h4>
-                            <p>CTO, Global Commerce</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-heart"></i> Stories</span><h2>Trusted by <span class="text-gradient">Industry Leaders</span></h2></div>
+            <div class="stories-slider" id="testimonialsSlider">
+                <div class="story-card"><div class="story-quote"><i class="fas fa-quote-left"></i><p>"Stackly increased our conversion rate by 35% in 3 months. Integration was seamless!"</p></div><div class="story-author"><img src="https://i.pravatar.cc/100?img=11" alt=""><div><h4>Alex Rivera</h4><p>CEO, TechStart Inc.</p></div></div></div>
+                <div class="story-card"><div class="story-quote"><i class="fas fa-quote-left"></i><p>"Best payment gateway we've used. Superior security and excellent support."</p></div><div class="story-author"><img src="https://i.pravatar.cc/100?img=25" alt=""><div><h4>Maria Garcia</h4><p>CTO, Global Commerce</p></div></div></div>
+                <div class="story-card"><div class="story-quote"><i class="fas fa-quote-left"></i><p>"The analytics dashboard transformed our revenue forecasting completely."</p></div><div class="story-author"><img src="https://i.pravatar.cc/100?img=33" alt=""><div><h4>James Park</h4><p>CFO, RetailMax</p></div></div></div>
             </div>
         </div>
     </section>
 
-
-   
-
-    <!-- Pricing Section -->
+    <!-- Pricing -->
     <section class="pricing-section" id="pricing-section">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">Pricing</span>
-                <h2 class="section-title">Transparent Pricing Plans</h2>
-            </div>
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-tags"></i> Pricing</span><h2>Transparent <span class="text-gradient">Pricing Plans</span></h2></div>
             <div class="pricing-wrapper">
-                <div class="price-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Basic</h3>
-                    <div class="price-amount">
-                        <span class="dollar">$</span>
-                        <span class="number">29</span>
-                        <span class="duration">/mo</span>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> 500 transactions</li>
-                        <li><i class="fas fa-check"></i> Email support</li>
-                        <li><i class="fas fa-check"></i> Basic reports</li>
-                    </ul>
-                    <a href="404.html" class="btn btn-outline">Choose Plan</a>
-                </div>
-                <div class="price-card featured" data-aos="fade-up" data-aos-delay="200">
-                    <div class="best-value">Best Value</div>
-                    <h3>Pro</h3>
-                    <div class="price-amount">
-                        <span class="dollar">$</span>
-                        <span class="number">99</span>
-                        <span class="duration">/mo</span>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Unlimited transactions</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
-                        <li><i class="fas fa-check"></i> Advanced analytics</li>
-                        <li><i class="fas fa-check"></i> Custom branding</li>
-                    </ul>
-                    <a href="404.html" class="btn btn-primary">Choose Plan</a>
-                </div>
-                <div class="price-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Enterprise</h3>
-                    <div class="price-amount">
-                        <span class="number">Custom</span>
-                    </div>
-                    <ul class="price-features">
-                        <li><i class="fas fa-check"></i> Custom volume</li>
-                        <li><i class="fas fa-check"></i> Dedicated support</li>
-                        <li><i class="fas fa-check"></i> White-label solution</li>
-                        <li><i class="fas fa-check"></i> SLA guarantee</li>
-                    </ul>
-                    <a href="404.html" class="btn btn-outline">Contact Us</a>
-                </div>
+                <div class="price-card" data-aos="fade-up"><h3>Basic</h3><div class="price-amount"><span style="font-size:1.5rem">$</span>29<span style="font-size:1rem;color:var(--text-muted)">/mo</span></div><ul class="price-features"><li><i class="fas fa-check"></i> 500 transactions</li><li><i class="fas fa-check"></i> Email support</li><li><i class="fas fa-check"></i> Basic reports</li></ul><a href="signup.html" class="btn btn-outline btn-block">Choose Plan</a></div>
+                <div class="price-card featured" data-aos="fade-up" data-aos-delay="100"><div class="best-value">Best Value</div><h3>Pro</h3><div class="price-amount"><span style="font-size:1.5rem">$</span>99<span style="font-size:1rem;color:var(--text-muted)">/mo</span></div><ul class="price-features"><li><i class="fas fa-check"></i> Unlimited transactions</li><li><i class="fas fa-check"></i> Priority support</li><li><i class="fas fa-check"></i> Advanced analytics</li><li><i class="fas fa-check"></i> Custom branding</li></ul><a href="signup.html" class="btn btn-primary btn-block">Choose Plan</a></div>
+                <div class="price-card" data-aos="fade-up" data-aos-delay="200"><h3>Enterprise</h3><div class="price-amount" style="font-size:2.5rem">Custom</div><ul class="price-features"><li><i class="fas fa-check"></i> Custom volume</li><li><i class="fas fa-check"></i> Dedicated support</li><li><i class="fas fa-check"></i> White-label</li><li><i class="fas fa-check"></i> SLA guarantee</li></ul><a href="contact.html" class="btn btn-outline btn-block">Contact Us</a></div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials-section">
+    <!-- Countdown -->
+    <section class="countdown-section"><div class="container countdown-wrap" data-aos="fade-up"><h3><i class="fas fa-gift"></i> Special Launch Offer Ends In</h3><div class="countdown-timer" id="countdown"></div></div></section>
+
+    <!-- Testimonials Grid -->
+    <section class="testimonials-section" style="background:var(--bg-primary)">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">Testimonials</span>
-                <h2 class="section-title">What Clients Say</h2>
-            </div>
+            <div class="section-header" data-aos="fade-up"><h2>What <span class="text-gradient">Clients Say</span></h2></div>
             <div class="testimonials-grid">
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"Exceptional service! Stackly has transformed how we handle payments."</p>
-                    </div>
-                    <div class="testimonial-author-info">
-                        <img src="https://i.pravatar.cc/80?img=33" alt="Client">
-                        <div>
-                            <h4>David Lee</h4>
-                            <p>Founder, StartupHub</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"Reliable, secure, and incredibly easy to integrate. Highly recommend!"</p>
-                    </div>
-                    <div class="testimonial-author-info">
-                        <img src="https://i.pravatar.cc/80?img=44" alt="Client">
-                        <div>
-                            <h4>Emma Wilson</h4>
-                            <p>CTO, FinanceApp</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-text">
-                        <i class="fas fa-quote-left"></i>
-                        <p>"The analytics dashboard is a game-changer for our business insights."</p>
-                    </div>
-                    <div class="testimonial-author-info">
-                        <img src="https://i.pravatar.cc/80?img=55" alt="Client">
-                        <div>
-                            <h4>James Brown</h4>
-                            <p>CEO, RetailPro</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="testimonial-item" data-aos="fade-up"><div class="testimonial-text"><i class="fas fa-quote-left"></i><p>"Exceptional service! Stackly transformed how we handle payments."</p></div><div class="testimonial-author-info"><img src="https://i.pravatar.cc/80?img=33" alt=""><div><h4>David Lee</h4><p>Founder, StartupHub</p></div></div></div>
+                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100"><div class="testimonial-text"><i class="fas fa-quote-left"></i><p>"Reliable, secure, and incredibly easy to integrate."</p></div><div class="testimonial-author-info"><img src="https://i.pravatar.cc/80?img=44" alt=""><div><h4>Emma Wilson</h4><p>CTO, FinanceApp</p></div></div></div>
+                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200"><div class="testimonial-text"><i class="fas fa-quote-left"></i><p>"Analytics dashboard is a game-changer for our business."</p></div><div class="testimonial-author-info"><img src="https://i.pravatar.cc/80?img=55" alt=""><div><h4>James Brown</h4><p>CEO, RetailPro</p></div></div></div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section class="faq-section" id="faq-section">
         <div class="container">
-            <div class="section-header text-center" data-aos="fade-up">
-                <span class="section-label">FAQ</span>
-                <h2 class="section-title">Common Questions</h2>
-            </div>
+            <div class="section-header" data-aos="fade-up"><span class="section-tag"><i class="fas fa-question-circle"></i> FAQ</span><h2>Common <span class="text-gradient">Questions</span></h2></div>
             <div class="faq-wrapper">
-                <div class="faq-block" data-aos="fade-up" data-aos-delay="100">
-                    <div class="faq-question-header">
-                        <h3>Is Stackly PCI compliant?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer-content">
-                        <p>Yes, Stackly is fully PCI DSS Level 1 certified, the highest level of security compliance in the payment industry.</p>
-                    </div>
-                </div>
-                <div class="faq-block" data-aos="fade-up" data-aos-delay="200">
-                    <div class="faq-question-header">
-                        <h3>What currencies do you support?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer-content">
-                        <p>We support 135+ currencies allowing you to accept payments from customers worldwide.</p>
-                    </div>
-                </div>
-                <div class="faq-block" data-aos="fade-up" data-aos-delay="300">
-                    <div class="faq-question-header">
-                        <h3>How quickly can I get started?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer-content">
-                        <p>Most merchants can complete integration and start accepting payments within 24 hours.</p>
-                    </div>
-                </div>
-                <div class="faq-block" data-aos="fade-up" data-aos-delay="400">
-                    <div class="faq-question-header">
-                        <h3>Do you charge setup fees?</h3>
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <div class="faq-answer-content">
-                        <p>No setup fees, no monthly minimums. You only pay for successful transactions.</p>
-                    </div>
-                </div>
+                <div class="faq-block" data-aos="fade-up"><div class="faq-question-header"><h3>Is Stackly PCI compliant?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer-content"><p>Yes, Stackly is fully PCI DSS Level 1 certified — the highest security standard in payments.</p></div></div>
+                <div class="faq-block" data-aos="fade-up"><div class="faq-question-header"><h3>What currencies do you support?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer-content"><p>We support 135+ currencies for global commerce.</p></div></div>
+                <div class="faq-block" data-aos="fade-up"><div class="faq-question-header"><h3>How quickly can I get started?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer-content"><p>Most merchants go live within 24 hours with our guided onboarding.</p></div></div>
+                <div class="faq-block" data-aos="fade-up"><div class="faq-question-header"><h3>Do you charge setup fees?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer-content"><p>No setup fees. Pay only for successful transactions.</p></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact-section">
+    <!-- Contact -->
+    <section class="contact-section" id="contact-section" style="background:var(--bg-primary)">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info" data-aos="fade-right">
-                    <h2>Get In Touch</h2>
-                    <p>Have questions? We'd love to hear from you.</p>
+                    <h2 style="font-size:2rem;margin-bottom:12px">Get In <span class="text-gradient">Touch</span></h2>
+                    <p style="color:var(--text-muted)">Have questions? We'd love to hear from you.</p>
                     <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>support@stackly.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+91 1234567890</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Address</h4>
-                                <p>Evolve WorkHub, Begur ,Karnataka</p>
-                            </div>
-                        </div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><p style="color:var(--text-muted)">support@stackly.com</p></div></div>
+                        <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Phone</h4><p style="color:var(--text-muted)">+91 1234567890</p></div></div>
+                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Address</h4><p style="color:var(--text-muted)">Evolve WorkHub, Bangalore</p></div></div>
                     </div>
                 </div>
                 <div class="contact-form-wrapper" data-aos="fade-left">
                     <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+                        <div class="form-group"><input type="text" placeholder="Subject"></div>
+                        <div class="form-group"><textarea rows="5" name="message" placeholder="Your Message" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta"><div class="cta-bg"></div><div class="container"><div class="cta-content" data-aos="zoom-in"><h2>Start Accepting Payments Today</h2><p>Join Stackly and grow your business globally</p><a href="signup.html" class="btn btn-primary btn-lg">Create Free Account</a></div></div></section>
+
+    
+    <!-- Footer -->
+   
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Stackly</h3>
-                    <p>Trusted payment gateway for businesses worldwide.</p>
+                <div class="footer-col" data-aos="fade-up">
+                    <a href="index.html" class="logo" style="margin-bottom:16px">
+                        <img src="images/logo.svg" alt="Stackly" class="logo-img" width="40" height="40">
+                        <span class="logo-text">STACK<span>LY</span></span>
+                    </a>
+                    <p>The world's most advanced payment gateway — secure, fast, and built for scale.</p>
                     <div class="social-links">
-                        <a href="404.html"><i class="fab fa-facebook"></i></a>
+                        <a href="404.html"><i class="fab fa-facebook-f"></i></a>
                         <a href="404.html"><i class="fab fa-twitter"></i></a>
-                        <a href="404.html"><i class="fab fa-linkedin"></i></a>
+                        <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
                         <a href="404.html"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Quick Links</h4>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Product</h4>
                     <ul>
-                        <li><a href="#hero-section">Home</a></li>
-                        <li><a href="#about-section">About</a></li>
-                        <li><a href="#services-section">Services</a></li>
-                        <li><a href="#pricing-section">Pricing</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="404.html">API Docs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="404.html">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
-                    <h4>Resources</h4>
+                    <h4>Account</h4>
                     <ul>
-                        <li><a href="404.html">Documentation</a></li>
-                        <li><a href="404.html">API Reference</a></li>
-                        <li><a href="404.html">Status</a></li>
-                        <li><a href="404.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
-                    <h4>Legal</h4>
-                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
                         <li><a href="404.html">Privacy Policy</a></li>
                         <li><a href="404.html">Terms of Service</a></li>
-                        <li><a href="404.html">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Stackly. All rights reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Stackly. All rights reserved.</p></div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
