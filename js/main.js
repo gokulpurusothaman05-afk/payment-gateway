@@ -143,6 +143,16 @@
             const href = $(this).attr('href');
             if (href === path) $(this).closest('.nav-item').addClass('active');
         });
+
+        // Close mobile menu when a non-dropdown nav link is clicked
+        $navMenu.find('a').on('click', function () {
+            const $link = $(this);
+            if ($link.parent().hasClass('dropdown')) return; // allow dropdown toggles
+            if ($navMenu.hasClass('active')) {
+                $navMenu.removeClass('active');
+                $hamburger.removeClass('active');
+            }
+        });
     }
 
     function initCounters() {

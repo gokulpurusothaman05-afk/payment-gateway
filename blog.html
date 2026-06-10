@@ -15,15 +15,27 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="index.html" class="logo"><img src="images/logo.svg" alt="Stackly" class="logo-img" width="44" height="44"><span class="logo-text">STACK<span>LY</span></span></a>
+                <a href="index.html" class="logo" data-aos="fade-right">
+                    <img src="images/logo.svg" alt="Stackly" class="logo-img" width="44" height="44">
+                    <span class="logo-text">STACK<span>LY</span></span>
+                </a>
                 <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
                 <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item dropdown"><a href="#" class="nav-link">Home <i class="fas fa-chevron-down"></i></a><ul class="dropdown-menu"><li><a href="index.html">Home Classic</a></li><li><a href="home2.html">Home Modern</a></li></ul></li>
+                    <li class="nav-item dropdown active">
+                        <a href="#" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                           
+                            <li><a href="home2.html">Home 2</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item active"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-actions"><a href="login.html" class="btn btn-ghost btn-sm">Login</a><a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a></li>
+                    <li class="nav-actions">
+                        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+                        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -76,27 +88,7 @@
         </div>
     </section>
 
-    <section class="blog-sidebar-section">
-        <div class="container">
-            <div class="sidebar-grid">
-                <div>
-                    <div class="section-header left" data-aos="fade-up"><h2>Featured <span class="text-gradient">Articles</span></h2></div>
-                    <div class="features-grid" style="grid-template-columns:1fr 1fr">
-                        <div class="feature-card" data-aos="fade-up"><div class="feature-icon"><i class="fas fa-fire"></i></div><h3>Trending Now</h3><p>AI-powered fraud detection is reshaping how merchants protect revenue.</p><a href="404.html" class="read-more">Read Article</a></div>
-                        <div class="feature-card" data-aos="fade-up" data-aos-delay="100"><div class="feature-icon"><i class="fas fa-podcast"></i></div><h3>Stackly Podcast</h3><p>Listen to industry leaders discuss the future of fintech.</p><a href="404.html" class="read-more">Listen Now</a></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="sidebar-widget" data-aos="fade-left"><h4>Popular Posts</h4>
-                        <div class="popular-post"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=120&q=80" alt=""><div><h5>Future of Digital Payments</h5><span>Jun 1, 2026</span></div></div>
-                        <div class="popular-post"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=120&q=80" alt=""><div><h5>PCI DSS Compliance Guide</h5><span>May 28, 2026</span></div></div>
-                        <div class="popular-post"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=120&q=80" alt=""><div><h5>Scaling for Startups</h5><span>May 20, 2026</span></div></div>
-                    </div>
-                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100"><h4>Newsletter</h4><p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px">Get weekly payment insights</p><form class="newsletter-form"><input type="email" placeholder="Your email" required><button type="submit" class="btn btn-primary btn-block btn-sm">Subscribe</button></form></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <section class="cta"><div class="cta-bg"></div><div class="container"><div class="cta-content" data-aos="zoom-in"><h2>Ready to Modernize Your Payments?</h2><p>Join thousands of businesses on Stackly</p><a href="signup.html" class="btn btn-primary btn-lg">Start Free Trial</a></div></div></section>
 
