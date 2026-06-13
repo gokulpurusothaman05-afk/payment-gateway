@@ -129,7 +129,13 @@ body.has-topbar .navbar { top: 37px; }
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.4rem; font-weight: 700;
 }
-.logo-img { width: 44px; height: 44px; }
+.logo-img,
+.preloader-logo,
+.auth-visual img,
+.auth-visual-content img {
+    width: 44px; height: 44px;
+    filter: invert(62%) sepia(79%) saturate(650%) hue-rotate(140deg) brightness(98%) contrast(95%);
+}
 .logo-text { letter-spacing: 1px; }
 .logo-text span { color: var(--primary); }
 .nav-menu {
